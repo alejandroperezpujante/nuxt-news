@@ -1,25 +1,33 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: '2024-04-03',
+
 	runtimeConfig: {
 		logto: {
 			endpoint: '',
 			appId: '',
 			appSecret: '',
-			cookieEncryptionKey: '',
-		},
+			cookieEncryptionKey: ''
+		}
 	},
-	modules: ['@logto/nuxt', '@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/color-mode', '@nuxt/eslint'],
-	colorMode: {
-		classSuffix: ''
-	},
+
+	modules: [
+		'@logto/nuxt',
+		'@nuxtjs/tailwindcss',
+		'shadcn-nuxt',
+		'@nuxtjs/color-mode',
+		'@nuxt/eslint',
+		'@nuxt/fonts'
+	],
+	colorMode: { classSuffix: '' },
 	eslint: {
 		config: {
 			stylistic: {
 				indent: 'tab',
-				commaDangle: 'never',
+				commaDangle: 'never'
 			}
 		}
 	},
-  devtools: { enabled: true }
+
+	devtools: { enabled: true }
 })

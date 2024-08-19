@@ -13,6 +13,7 @@
   "dependencies": {
     "@logto/nuxt": "^0.3.3",
     "@nuxt/eslint": "^0.5.1",
+    "@nuxt/fonts": "^0.7.2",
     "@vee-validate/zod": "^4.13.2",
     "@vueuse/core": "^11.0.1",
     "class-variance-authority": "^0.7.0",

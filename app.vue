@@ -1,9 +1,12 @@
 <template>
-  <NuxtRouteAnnouncer />
+	<NuxtRouteAnnouncer />
 
+	<header>
+		<h2>NuxtNews</h2>
+	</header>
 	<main class="flex-1 max-w-screen-md mx-auto place-content-center">
-    <NuxtPage />
-  </main>
+		<NuxtPage />
+	</main>
 	<footer class="p-4">
 		<ColorModelToggle />
 	</footer>
