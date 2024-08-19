@@ -1,5 +1,5 @@
 if (import.meta.env.PROD) {
-	await import('dotenv/config')
+	import('dotenv/config').then(() => { console.log('dotenv loaded') })
 }
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
