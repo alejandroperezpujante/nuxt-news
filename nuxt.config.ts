@@ -9,7 +9,10 @@ export default defineNuxtConfig({
 			cookieEncryptionKey: '',
 		},
 	},
-	modules: ['@logto/nuxt', "@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxt/eslint"],
+	modules: ['@logto/nuxt', '@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/color-mode', '@nuxt/eslint'],
+	colorMode: {
+		classSuffix: ''
+	},
 	eslint: {
 		config: {
 			stylistic: {
