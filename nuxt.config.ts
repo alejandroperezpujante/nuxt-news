@@ -10,5 +10,13 @@ export default defineNuxtConfig({
 		},
 	},
 	modules: ['@logto/nuxt', "@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxt/eslint"],
+	eslint: {
+		config: {
+			stylistic: {
+				indent: 'tab',
+				commaDangle: 'never',
+			}
+		}
+	},
   devtools: { enabled: true }
 })
