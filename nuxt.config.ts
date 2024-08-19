@@ -1,7 +1,3 @@
-if (import.meta.env.PROD) {
-	import('dotenv/config').then(() => { console.log('dotenv loaded') })
-}
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: '2024-04-03',
