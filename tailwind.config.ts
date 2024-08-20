@@ -15,6 +15,9 @@ const config: Partial<Config> = {
 			}
 		},
 		extend: {
+			screens: {
+				'high-dpi': { raw: 'only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx)' }
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

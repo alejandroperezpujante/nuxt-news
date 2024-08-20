@@ -1,15 +1,10 @@
 <template>
 	<NuxtRouteAnnouncer />
 
-	<header>
-		<h2>NuxtNews</h2>
-	</header>
+	<SiteHeader />
 	<main class="flex-1 max-w-screen-md mx-auto place-content-center">
 		<NuxtPage />
 	</main>
-	<footer class="p-4">
-		<ColorModelToggle />
-	</footer>
 </template>
 
 <style>
@@ -18,6 +13,6 @@
 }
 
 body {
-	@apply min-h-dvh flex flex-col;
+	@apply p-4 min-h-dvh flex flex-col;
 }
 </style>

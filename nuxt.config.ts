@@ -17,8 +17,13 @@ export default defineNuxtConfig({
 		'shadcn-nuxt',
 		'@nuxtjs/color-mode',
 		'@nuxt/eslint',
-		'@nuxt/fonts'
+		'@nuxt/fonts',
+		'@vueuse/nuxt'
 	],
+	fonts: {
+		defaults: { weights: [400, 600] },
+		providers: { google: false }
+	},
 	colorMode: { classSuffix: '' },
 	eslint: {
 		config: {
