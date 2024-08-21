@@ -1,49 +1,33 @@
 <script setup lang="ts">
-const client = useLogtoClient()
-const accessToken = useState<string | undefined>('access-token')
-
-await callOnce(async () => {
-	if (!client) {
-		throw new Error('Logto client is not available')
-	}
-
-	if (!(await client.isAuthenticated())) {
-		return
-	}
-
-	try {
-		accessToken.value = await client.getAccessToken()
-	}
-	catch (error) {
-		console.error('Failed to get access token', error)
-	}
-})
-
-const user = useLogtoUser()
+const { status, data: posts, error } = useFetch('/api/posts/recent')
 </script>
 
 <template>
-	<div>
-		<p>Logto Nuxt 3 sample</p>
-		<p v-if="Boolean(user)">
-			Authenticated
-		</p>
-		<ul v-if="Boolean(user)">
+	<div
+		v-if="status === 'pending'"
+		class="space-y-4"
+	>
+		<PostResumeSkeleton
+			v-for="index in 30"
+			:key="index"
+		/>
+	</div>
+
+	<div v-else-if="status === 'success'">
+		<ul class="space-y-4">
 			<li
-				v-for="(value, key) in user"
-				:key="key"
+				v-for="post in posts"
+				:key="post.id"
+				class="text-2xl font-bold"
 			>
-				<b>{{ key }}:</b> {{ value }}
+				<PostResume :post />
 			</li>
 		</ul>
-		<p v-if="Boolean(user)">
-			Access token: {{ accessToken }}
+	</div>
+
+	<div v-else>
+		<p class="text-center text-lg">
+			Error: <pre>{{ JSON.stringify(error, null, 2) }}</pre>
 		</p>
-		<Button
-			:href="`/sign-${user ? 'out' : 'in'}`"
-			as="a"
-		>
-			Sign {{ user ? "out" : "in" }}
-		</Button>
 	</div>
 </template>

@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { Newspaper, History } from 'lucide-vue-next'
+import { Newspaper, Search } from 'lucide-vue-next'
 
 const LINKS = [
 	{ to: '/', label: 'Recent', icon: Newspaper },
-	{ to: '/all-posts', label: 'All posts', icon: History }
+	{ to: '/Search', label: 'Search', icon: Search }
 ]
 </script>
 
 <template>
 	<header class="sticky z-40 top-0 bg-background/80 backdrop-blur-lg border-b border-border">
-		<div class="h-14 max-w-screen-2xl flex flex-col md:flex-row items-center gap-8">
+		<div class="h-14 flex flex-col md:flex-row items-center gap-8">
 			<h2 class="text-4xl font-semibold">
 				NuxtNews
 			</h2>

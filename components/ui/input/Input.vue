@@ -4,10 +4,18 @@ import { cn } from '@/lib/ui-utils'
 
 const props = defineProps<{
 	defaultValue?: string | number
+	modelValue?: string | number
 	class?: HTMLAttributes['class']
 }>()
 
-const modelValue = defineModel<string | number>({ default: props.defaultValue })
+const emits = defineEmits<{
+	(e: 'update:modelValue', payload: string | number): void
+}>()
+
+const modelValue = useVModel(props, 'modelValue', emits, {
+	passive: true,
+	defaultValue: props.defaultValue
+})
 </script>
 
 <template>

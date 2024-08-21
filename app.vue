@@ -1,8 +1,12 @@
+<script lang="ts" setup>
+
+</script>
+
 <template>
 	<NuxtRouteAnnouncer />
 
 	<SiteHeader />
-	<main class="flex-1 max-w-screen-md mx-auto place-content-center">
+	<main class="flex-1 max-w-screen-lg w-full mx-auto mt-24 md:mt-8">
 		<NuxtPage />
 	</main>
 </template>

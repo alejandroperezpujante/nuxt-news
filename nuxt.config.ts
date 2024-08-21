@@ -8,6 +8,13 @@ export default defineNuxtConfig({
 			appId: '',
 			appSecret: '',
 			cookieEncryptionKey: ''
+		},
+		pg: {
+			host: '',
+			port: 0,
+			user: '',
+			password: '',
+			database: ''
 		}
 	},
 
@@ -18,11 +25,18 @@ export default defineNuxtConfig({
 		'@nuxtjs/color-mode',
 		'@nuxt/eslint',
 		'@nuxt/fonts',
-		'@vueuse/nuxt'
+		'@vueuse/nuxt',
+		'@nuxtjs/seo'
 	],
 	fonts: {
 		defaults: { weights: [400, 600] },
 		providers: { google: false }
+	},
+	site: {
+		url: 'https://nuxtnews.perezpujantealejandro.dev',
+		name: 'Nuxt News',
+		description: 'Clone of Hacker News built with Nuxt',
+		defaultLocale: 'en'
 	},
 	colorMode: { classSuffix: '' },
 	eslint: {
@@ -34,5 +48,9 @@ export default defineNuxtConfig({
 		}
 	},
 
+	experimental: {
+		watcher: 'parcel',
+		typedPages: true
+	},
 	devtools: { enabled: true }
 })

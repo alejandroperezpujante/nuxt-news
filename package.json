@@ -8,17 +8,22 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "lint": "eslint --fix .",
+    "db:generate": "drizzle-kit generate",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@logto/nuxt": "^0.3.3",
     "@nuxt/eslint": "^0.5.1",
     "@nuxt/fonts": "^0.7.2",
+    "@nuxtjs/seo": "^2.0.0-rc.18",
     "@vee-validate/zod": "^4.13.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.33.0",
     "lucide-vue-next": "^0.428.0",
+    "nanoid": "^5.0.7",
     "nuxt": "^3.12.4",
+    "postgres": "^3.4.4",
     "radix-vue": "^1.9.4",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.5.2",
@@ -34,6 +39,7 @@
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@vueuse/core": "^11.0.1",
     "@vueuse/nuxt": "^11.0.1",
+    "drizzle-kit": "^0.24.0",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4"
   }
