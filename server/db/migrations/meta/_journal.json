@@ -8,6 +8,13 @@
       "when": 1724172278224,
       "tag": "0000_groovy_alex_power",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1726261839582,
+      "tag": "0001_fearless_corsair",
+      "breakpoints": true
     }
   ]
 }

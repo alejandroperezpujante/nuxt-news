@@ -2,7 +2,7 @@ export default defineCachedEventHandler(() => {
 	// Get the posts that:
 	return db.query.post.findMany({
 		// Were created in the last 24 hours
-		where: (posts, { gt }) => gt(posts.createdAt, new Date(Date.now() - 24 * 60 * 60 * 1000)),
+		// where: (posts, { gt }) => gt(posts.createdAt, new Date(Date.now() - 24 * 60 * 60 * 1000)),
 		// Order by creation date, descending
 		orderBy: (posts, { desc }) => [desc(posts.id)],
 		// Limit the number of posts to 30

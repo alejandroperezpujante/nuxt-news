@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'vue'
 import { PaginationEllipsis, type PaginationEllipsisProps } from 'radix-vue'
 import { MoreHorizontal } from 'lucide-vue-next'
-import { cn } from '@/lib/ui-utils'
+
 
 const props = defineProps<PaginationEllipsisProps & { class?: HTMLAttributes['class'] }>()
 

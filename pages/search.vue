@@ -6,10 +6,10 @@ const debouncedQueryParams = refDebounced(
 	// Workaround until https://github.com/vueuse/vueuse/pull/3969 is resolved
 	computed(() => ({ title: titleQuery.value })),
 	1000,
-	{ maxWait: 2000 }
+	{ maxWait: 2000 },
 )
 const { status, data: posts, error } = useFetch('/api/posts/search', {
-	query: debouncedQueryParams
+	query: debouncedQueryParams,
 })
 </script>
 
@@ -56,9 +56,8 @@ const { status, data: posts, error } = useFetch('/api/posts/search', {
 	</div>
 
 	<div v-else>
-		<p class="text-center text-lg">
-			Error:
-			<pre>{{ JSON.stringify(error, null, 2) }}</pre>
-		</p>
+		<div class="text-center text-lg">
+			<pre>Error: {{ JSON.stringify(error, null, 2) }}</pre>
+		</div>
 	</div>
 </template>

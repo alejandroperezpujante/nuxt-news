@@ -45,7 +45,7 @@ function calculateTimeAgo(timestamp: string): string {
 	<PostResumeContainer>
 		<template #content>
 			<!-- TODO: API for this: Up/Down vote posts -->
-			<div class="flex flex-col gap-2">
+			<div class="flex flex-col">
 				<Button
 					size="icon"
 					variant="ghost"

@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'vue'
 import { PaginationNext, type PaginationNextProps } from 'radix-vue'
 import { ChevronRight } from 'lucide-vue-next'
-import { cn } from '@/lib/ui-utils'
+
 
 const props = withDefaults(defineProps<PaginationNextProps & { class?: HTMLAttributes['class'] }>(), {
 	asChild: true

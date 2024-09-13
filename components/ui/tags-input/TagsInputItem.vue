@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'vue'
 import { TagsInputItem, type TagsInputItemProps, useForwardProps } from 'radix-vue'
 
-import { cn } from '@/lib/ui-utils'
+
 
 const props = defineProps<TagsInputItemProps & { class?: HTMLAttributes['class'] }>()
 

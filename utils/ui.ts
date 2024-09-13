@@ -1,3 +1,4 @@
+import type { Directive } from 'vue'
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 

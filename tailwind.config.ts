@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 import animate from 'tailwindcss-animate'
 
 const config: Partial<Config> = {
@@ -82,6 +83,9 @@ const config: Partial<Config> = {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'collapsible-down': 'collapsible-down 0.2s ease-in-out',
 				'collapsible-up': 'collapsible-up 0.2s ease-in-out'
+			},
+			fontFamily: {
+				brand: ['Chillax', ...fontFamily.sans]
 			}
 		}
 	},

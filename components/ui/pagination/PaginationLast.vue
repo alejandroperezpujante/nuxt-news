@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'vue'
 import { PaginationLast, type PaginationLastProps } from 'radix-vue'
 import { ChevronsRight } from 'lucide-vue-next'
-import { cn } from '@/lib/ui-utils'
+
 
 const props = withDefaults(defineProps<PaginationLastProps & { class?: HTMLAttributes['class'] }>(), {
 	asChild: true

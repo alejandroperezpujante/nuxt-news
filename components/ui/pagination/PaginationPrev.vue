@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'vue'
 import { PaginationPrev, type PaginationPrevProps } from 'radix-vue'
 import { ChevronLeft } from 'lucide-vue-next'
-import { cn } from '@/lib/ui-utils'
+
 
 const props = withDefaults(defineProps<PaginationPrevProps & { class?: HTMLAttributes['class'] }>(), {
 	asChild: true

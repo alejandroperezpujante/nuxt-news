@@ -3,5 +3,5 @@
 	"eslint.useFlatConfig": true,
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "always"
-	},
+	}
 }

@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'vue'
 import { SelectIcon, SelectTrigger, type SelectTriggerProps, useForwardProps } from 'radix-vue'
 import { ChevronDown } from 'lucide-vue-next'
-import { cn } from '@/lib/ui-utils'
+
 
 const props = defineProps<SelectTriggerProps & { class?: HTMLAttributes['class'] }>()
 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const user = useUser()
 const { status, data: posts, error } = useFetch('/api/posts/recent')
 </script>
 
@@ -13,7 +14,12 @@ const { status, data: posts, error } = useFetch('/api/posts/recent')
 		/>
 	</div>
 
-	<div v-else-if="status === 'success'">
+	<div v-else-if="status === 'success'" class="h-dvh">
+		<header>
+			<h1 class="text-4xl font-bold mb-4">
+				Recent Posts
+			</h1>
+		</header>
 		<ul class="space-y-4">
 			<li
 				v-for="post in posts"
@@ -26,8 +32,8 @@ const { status, data: posts, error } = useFetch('/api/posts/recent')
 	</div>
 
 	<div v-else>
-		<p class="text-center text-lg">
-			Error: <pre>{{ JSON.stringify(error, null, 2) }}</pre>
-		</p>
+		<div class="text-center text-lg">
+			<pre>Error: {{ JSON.stringify(error, null, 2) }}</pre>
+		</div>
 	</div>
 </template>

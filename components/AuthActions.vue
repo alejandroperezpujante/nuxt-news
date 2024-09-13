@@ -1,15 +1,25 @@
 <script lang="ts" setup>
 import { LogOut, Settings, User } from 'lucide-vue-next'
 
-const user = useLogtoUser() as undefined | Record<string, string | number>
-const isAuthenticated = computed(() => user !== undefined)
+const user = useUser()
 </script>
 
 <template>
-	<DropdownMenu v-if="isAuthenticated">
+	<LazyDropdownMenu v-if="user">
 		<DropdownMenuTrigger as-child>
-			<Button variant="outline">
-				Open
+			<Button
+				size="icon"
+				class="rounded-full"
+			>
+				<Avatar>
+					<AvatarImage
+						src="https://avatars.githubusercontent.com/u/51539289?v=4"
+						alt="User avatar"
+					/>
+					<AvatarFallback>
+						<User class="size-4" />
+					</AvatarFallback>
+				</Avatar>
 			</Button>
 		</DropdownMenuTrigger>
 
@@ -38,13 +48,14 @@ const isAuthenticated = computed(() => user !== undefined)
 				</a>
 			</DropdownMenuItem>
 		</DropdownMenuContent>
-	</DropdownMenu>
+	</LazyDropdownMenu>
 
 	<Button
 		v-else
-		href="/sign-in"
-		as="a"
+		as-child
 	>
-		Sign in
+		<NuxtLink to="/login">
+			Sign in
+		</NuxtLink>
 	</Button>
 </template>

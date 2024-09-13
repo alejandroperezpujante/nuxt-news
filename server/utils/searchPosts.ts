@@ -1,8 +1,8 @@
 import type { H3Event } from 'h3'
 import type { SelectedOptional } from './types'
-import { isEmpty } from './validators'
+import { isEmpty } from './requestParsers'
 
-export type SearchPostsOptions = {
+export interface SearchPostsOptions {
 	title: string
 	pageSize: number
 }
@@ -13,7 +13,7 @@ export const searchPosts = defineCachedFunction(
 
 		return db.query.post.findMany({
 			where: (posts, { ilike }) => ilike(posts.title, isEmpty(title) ? '%%' : `%${title}%`),
-			limit: pageSize
+			limit: pageSize,
 		})
 	},
 	{
@@ -21,7 +21,7 @@ export const searchPosts = defineCachedFunction(
 		name: 'searchPosts',
 		getKey: (event: H3Event, searchOptions: SelectedOptional<SearchPostsOptions, 'title'>) =>
 			new URLSearchParams(
-				Object.entries(searchOptions).map(([key, value]) => [key, value?.toString() ?? ''])
-			).toString()
-	}
+				Object.entries(searchOptions).map(([key, value]) => [key, value?.toString() ?? '']),
+			).toString(),
+	},
 )

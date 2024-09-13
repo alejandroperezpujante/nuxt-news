@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'vue'
 import { Toggle, type ToggleEmits, type ToggleProps, useForwardPropsEmits } from 'radix-vue'
 import { type ToggleVariants, toggleVariants } from '.'
-import { cn } from '@/lib/ui-utils'
+
 
 const props = withDefaults(defineProps<ToggleProps & {
 	class?: HTMLAttributes['class']

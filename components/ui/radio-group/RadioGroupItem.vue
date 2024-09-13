@@ -7,7 +7,7 @@ import {
 	useForwardProps
 } from 'radix-vue'
 import { Circle } from 'lucide-vue-next'
-import { cn } from '@/lib/ui-utils'
+
 
 const props = defineProps<RadioGroupItemProps & { class?: HTMLAttributes['class'] }>()
 

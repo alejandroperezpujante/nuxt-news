@@ -1,56 +1,55 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
 	compatibilityDate: '2024-04-03',
 
 	runtimeConfig: {
-		logto: {
-			endpoint: '',
-			appId: '',
-			appSecret: '',
-			cookieEncryptionKey: ''
-		},
 		pg: {
 			host: '',
 			port: 0,
 			user: '',
 			password: '',
-			database: ''
-		}
+			database: '',
+		},
+
+		public: {
+			themeKey: 'theme',
+		},
 	},
 
 	modules: [
-		'@logto/nuxt',
 		'@nuxtjs/tailwindcss',
 		'shadcn-nuxt',
-		'@nuxtjs/color-mode',
 		'@nuxt/eslint',
 		'@nuxt/fonts',
 		'@vueuse/nuxt',
-		'@nuxtjs/seo'
+		'@nuxtjs/seo',
+		'@nuxt/icon',
+		'@formkit/auto-animate',
 	],
 	fonts: {
 		defaults: { weights: [400, 600] },
-		providers: { google: false }
+		providers: { google: false },
 	},
 	site: {
 		url: 'https://nuxtnews.perezpujantealejandro.dev',
 		name: 'Nuxt News',
 		description: 'Clone of Hacker News built with Nuxt',
-		defaultLocale: 'en'
+		defaultLocale: 'en',
 	},
-	colorMode: { classSuffix: '' },
 	eslint: {
 		config: {
-			stylistic: {
-				indent: 'tab',
-				commaDangle: 'never'
-			}
-		}
+			// Delegate JS, TS, and Vue config to @antfu/eslint-config.
+			standalone: false,
+		},
+	},
+	icon: {
+		size: '1.2em',
 	},
 
 	experimental: {
 		watcher: 'parcel',
-		typedPages: true
+		typedPages: true,
 	},
-	devtools: { enabled: true }
+	devtools: { enabled: true },
 })

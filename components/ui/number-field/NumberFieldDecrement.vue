@@ -3,7 +3,7 @@ import type { NumberFieldDecrementProps } from 'radix-vue'
 import { NumberFieldDecrement, useForwardProps } from 'radix-vue'
 import type { HTMLAttributes } from 'vue'
 import { Minus } from 'lucide-vue-next'
-import { cn } from '@/lib/ui-utils'
+
 
 const props = defineProps<NumberFieldDecrementProps & { class?: HTMLAttributes['class'] }>()
 
